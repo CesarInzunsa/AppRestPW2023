@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
     "dev": "nodemon --exec npm run babel-node -- src/index.js",
     "build": "babel src --out-dir dist",
