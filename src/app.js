@@ -3,11 +3,14 @@ import morgan from 'morgan';
 import cors from 'cors';
 //FIC: imports Swagger
 //FIC: imports Routes
+import routeAPI from './api/v1/routes/index';
 //FIC: imports Middlewares
 //FIC: Config para variables de entorno
 import config from './config/config';
 //FIC: Declaramos la variable app igualandola a express
 const app = express();
+//FIC: Establece la conexion a la BD
+import { mongoose } from './config/database.config';
 //FIC: Settings
 app.set('port', config.PORT);
 //FIC: Middlewares generales
@@ -29,6 +32,7 @@ app.get('/DrFIC', (req, res) => {
     );
 })
 // Routes
+routeAPI(app);
 // Swagger Docs
 // Middleware para el manejo de errores
 // Export App
