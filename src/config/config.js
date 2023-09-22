@@ -10,4 +10,5 @@ export default {
     DATABASE: process.env.DATABASE || 'db_ecommerce',
     DB_USER: process.env.DB_PASSWORD || 'florecitarockera',
     DB_PASSWORD: process.env.DB_USER || 'AdminUser',
+    CLUSTER: process.env.CLUSTER || 'No encontre la variable de entorno CLUSTER',
 }
