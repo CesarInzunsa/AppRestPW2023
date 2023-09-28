@@ -4,6 +4,6 @@ import * as institutesController from "../controllers/institutes.controller";
 const router = Router();
 
 // Este bloque crece por cada nueva API relacionada con institutos que tu agregues.
-router.get('/', institutesController.getInstitutesAll);
+router.get("/", institutesController.getInstitutesAll);
 
 export default router;

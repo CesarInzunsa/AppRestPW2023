@@ -1,5 +1,5 @@
 import institutos from '../models/institutes'
-import { OK, FAIl, BITACORA, DATA, AddMsg } from '../../../middlewares/respPWA.handler'
+import { OK, FAIL, BITACORA, DATA, AddMSG } from '../../../api/middlewares/respPWA.handler'
 
 export const getInstitutesAll = async () => {
 
@@ -25,7 +25,7 @@ export const getInstitutesAll = async () => {
         //data.status = 200;
         data.messageUSR = "La extraccion de los institutos fue exitosa";
         data.dataRes = InstitesAll;
-        bitacora = AddMsg(bitacora, data, 'OK', 200, true);
+        bitacora = AddMSG(bitacora, data, 'OK', 200, true);
         return OK(bitacora);
 
     } catch (error) {
@@ -34,7 +34,7 @@ export const getInstitutesAll = async () => {
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
         data.messageUSR = "La extracion de los Institutos no fue exitosa";
-        bitacora = AddMsg(bitacora, data, 'FAIL');
+        bitacora = AddMSG(bitacora, data, 'FAIL');
         return FAIL(bitacora);
 
     } finally {

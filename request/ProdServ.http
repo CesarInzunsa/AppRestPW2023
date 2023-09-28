@@ -8,3 +8,13 @@ GET {{api}}/1
 GET {{api}}/1?keyType=OK
 ### GET ITEM
 GET {{api}}/15058?keyType=BK
+
+@api_PWA = http://localhost:3020/api/pwa
+### GET
+GET {{api_PWA}}/institutes
+### GET ITEM
+GET {{api_PWA}}/1
+### GET ITEM
+GET {{api_PWA}}/1?keyType=OK
+### GET ITEM
+GET {{api_PWA}}/15058?keyType=BK

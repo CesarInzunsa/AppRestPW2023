@@ -3,12 +3,12 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default {
-    HOST: process.env.HOST || 'localhost',
-    PORT: process.env.PORT || 3020,
-    API_URL: process.env.API_URL || '/api/v1',
-    CONNECTION_STRING: process.env.CONNECTION_STRING || 'mongodb://AdminUser:florecitarockera@127.0.0.1:27017/?authMechanism=SCRAM-SHA-256&authSource=db_ecommerce',
-    DATABASE: process.env.DATABASE || 'db_ecommerce',
-    DB_USER: process.env.DB_PASSWORD || 'florecitarockera',
-    DB_PASSWORD: process.env.DB_USER || 'AdminUser',
+    HOST: process.env.HOST || 'No encontre la variable de entorno HOST',
+    PORT: process.env.PORT || 'No encontre la variable de entorno PORT',
+    API_URL: process.env.API_URL || 'No encontre la variable de entorno API_URL',
+    CONNECTION_STRING: process.env.CONNECTION_STRING || 'No encontre la variable de entorno CONNECTION_STRING',
+    DATABASE: process.env.DATABASE || 'No encontre la variable de entorno DATABASE',
+    DB_USER: process.env.DB_USER || 'No encontre la variable de entorno DB_USER',
+    DB_PASSWORD: process.env.DB_PASSWORD || 'No encontre la variable de entorno DB_PASSWORD',
     CLUSTER: process.env.CLUSTER || 'No encontre la variable de entorno CLUSTER',
 }
