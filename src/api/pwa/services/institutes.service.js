@@ -40,6 +40,4 @@ export const getInstitutesAll = async () => {
     } finally {
         //Haya o no haya error se ejecuta el finally
     }
-
-
 }

@@ -1,0 +1,4 @@
+@api = http://localhost:3020/api/pwa
+
+//GET ALL INSTITUTES
+GET {{api}}/institutes
