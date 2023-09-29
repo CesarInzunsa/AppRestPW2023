@@ -2,3 +2,12 @@
 
 //GET ALL INSTITUTES
 GET {{api}}/institutes
+
+//POST INSTITUTE
+POST {{api}}
+Content-Type: application/json
+
+{
+  "DesInstituto": "prueba",
+  "IdInstitutesOK": 743
+}

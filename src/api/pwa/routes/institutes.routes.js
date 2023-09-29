@@ -5,7 +5,14 @@ const router = Router();
 
 // Este bloque crece por cada nueva API relacionada con institutos que tu agregues.
 
-//GET ALL INSTITUTES
+// GET
 router.get("/", institutesController.getInstitutesAll);
+
+// POST
+router.post("/", institutesController.addInstitutes);
+
+// PUT
+
+// DELETE
 
 export default router;
