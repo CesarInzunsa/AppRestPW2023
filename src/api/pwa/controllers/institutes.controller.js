@@ -31,3 +31,38 @@ export const addInstitutes = async (req, res, next) => {
         next(error)
     }
 }
+
+/////////////////////////////////////////////////////
+// *********** PUT SECTION INSTITUTES *********** //
+/////////////////////////////////////////////////////
+
+// UPDATE INSTITUTES
+export const putInstitutes = async (req, res, next) => {
+    try {
+
+        const { id } = req.params;
+
+        const InstituteUpdated = await institutesServices.putInstitutes(id, req.body);
+        if (InstituteUpdated) {
+            return res.status(InstituteUpdated.status).json(InstituteUpdated);
+        }
+    } catch (error) {
+        next(error)
+    }
+}
+
+/////////////////////////////////////////////////////
+// *********** DELETE SECTION INSTITUTES *********** //
+/////////////////////////////////////////////////////
+
+// DELETE INSTITUTES
+export const deleteInstitutes = async (req, res, next) => {
+    try {
+        const InstituteDeleted = await institutesServices.deleteInstitutes(req.params);
+        if (InstituteDeleted) {
+            return res.status(InstituteDeleted.status).json(InstituteDeleted);
+        }
+    } catch (error) {
+        next(error)
+    }
+}

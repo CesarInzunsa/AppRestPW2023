@@ -12,7 +12,9 @@ router.get("/", institutesController.getInstitutesAll);
 router.post("/", institutesController.addInstitutes);
 
 // PUT
+router.put("/:id", institutesController.putInstitutes);
 
 // DELETE
+router.delete("/:id", institutesController.deleteInstitutes);
 
 export default router;
