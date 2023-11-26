@@ -6,6 +6,7 @@ import cors from 'cors';
 //FIC: imports Routes
 import routeAPIWEB from './api/v1/routes/index';
 import routeAPIPWA from './api/pwa/routes/index';
+import routeAPIPWA2 from './api/pwa copy/routes/index';
 
 //FIC: imports Middlewares
 //FIC: Config para variables de entorno
@@ -44,6 +45,7 @@ app.get('/DrFIC', (req, res) => {
 // Routes
 routeAPIWEB(app);
 routeAPIPWA(app);
+routeAPIPWA2(app);
 
 // Swagger Docs
 // Middleware para el manejo de errores
