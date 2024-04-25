@@ -16,6 +16,18 @@ export const getInstitutesAll = async (req, res, next) => {
     }
 }
 
+// GET ONE INSTITUTE
+export const getInstitutesONE = async (req, res, next) => {
+    try {
+        const InstituteONE = await institutesServices.getInstitutesONE(req.query);
+        if (InstituteONE) {
+            return res.status(InstituteONE.status).json(InstituteONE);
+        }
+    } catch (error) {
+        next(error)
+    }
+}
+
 /////////////////////////////////////////////////////
 // *********** POST SECTION INSTITUTES *********** //
 /////////////////////////////////////////////////////

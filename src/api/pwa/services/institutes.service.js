@@ -49,6 +49,57 @@ export const getInstitutesAll = async () => {
     }
 }
 
+// GET ONE INSTITUTE
+export const getInstitutesONE = async (params) => {
+
+    let bitacora = BITACORA();
+    let data = DATA();
+
+    try {
+        bitacora.process = "Extraer uno de los institutos";
+        data.method = "GET";
+        data.api = "/institutes/one";
+        data.process = "Extraer uno de los institutos de la coleccion de cat_institutos";
+
+        let query = {
+            IdInstitutoOK: params.IdInstitutoOK,
+            IdInstitutoBK: params.IdInstitutoBK,
+        };
+
+        const instituteOne = await institutos.findOne(query).then((instituto) => {
+            if (!instituto) {
+                data.status = 404;
+                data.messageDEV = "La base de datos no institutos";
+                throw Error(data.messageDEV);
+            }
+
+            return instituto;
+        });
+
+
+        //data.status = 200;
+        data.messageUSR = "La extraccion del instituto fue exitosa";
+        data.dataRes = instituteOne;
+        bitacora = AddMSG(bitacora, data, "OK", 200, true);
+        return OK(bitacora);
+
+    } catch (error) {
+        if (!data.status) data.status = error.statusCode;
+        let { message } = error;
+        if (!data.messageDEV) data.messageDEV = message;
+        if (data.dataRes.length === 0) data.dataRes = error;
+
+        data.messageUSR = "La extracion de los Institutos no fue exitosa";
+        bitacora = AddMSG(bitacora, data, 'FAIL');
+
+        return FAIL(bitacora);
+
+    } finally {
+        //Haya o no haya error se ejecuta el finally
+    }
+
+}
+
 /////////////////////////////////////////////////////
 // *********** POST SECTION INSTITUTES *********** //
 /////////////////////////////////////////////////////

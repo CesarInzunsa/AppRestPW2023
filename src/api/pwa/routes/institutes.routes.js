@@ -8,6 +8,8 @@ const router = Router();
 // GET
 router.get("/", institutesController.getInstitutesAll);
 
+router.get("/one?", institutesController.getInstitutesONE);
+
 // POST
 router.post("/", institutesController.addInstitutes);
 

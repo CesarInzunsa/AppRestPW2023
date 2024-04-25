@@ -8,7 +8,7 @@ const options = {
 };
 
 const crearConexion = (dbName, dbCluster) => {
-    const uri = `mongodb://${config.DB_USER}:${config.DB_PASSWORD}@${dbCluster}/${dbName}?retryWrites=true&w=majority`;
+    const uri = `mongodb+srv://${config.DB_USER}:${config.DB_PASSWORD}@${dbCluster}/${dbName}?retryWrites=true&w=majority`;
 
     return mongoose.createConnection(uri, options);
 }
